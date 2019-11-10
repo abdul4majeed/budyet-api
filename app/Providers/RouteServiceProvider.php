@@ -67,6 +67,7 @@ class RouteServiceProvider extends ServiceProvider
     {
         $this->OriginalApiRoutes();
         $this->ContactUsApiRoutes();
+        $this->LoginRegisterationApiRoutes();
     }
 
     protected function OriginalApiRoutes()
@@ -84,4 +85,13 @@ class RouteServiceProvider extends ServiceProvider
         ->namespace($this->namespace)
         ->group(base_path('routes/ContactForm/contact.php'));
     }
+
+    protected function LoginRegisterationApiRoutes()
+    {
+        Route::prefix('api')
+             ->middleware('api')
+             ->namespace($this->namespace)
+             ->group(base_path('routes/LoginRegisteration/authorization.php'));
+    }
+
 }

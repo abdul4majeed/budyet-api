@@ -2,4 +2,8 @@
 
 use Illuminate\Http\Request;
 
-Route::resource('/contact', 'ContactUsController');
+Route::post('/contact/store','ContactUsController@store');
+// Route::resource('/contact', 'ContactUsController');//->middleware('cors');
+
+// Route::get('creates', array('middleware' => 'cors', 'uses' => 'ContactUsController@create'));
+
